@@ -108,12 +108,13 @@ const CourseController = {
     get: async (req, res) => {
         try {
             const result = await courseModel.find();
+            console.log("Result from get endpoint:", result); // Add this line
             res.status(200).send(SendResponse(true, "", result));
         } catch (error) {
             res.status(500).send(SendResponse(false, "internal server error", error));
         }
     },
-
+    
 
     // // // =======getByID Api=======
 
